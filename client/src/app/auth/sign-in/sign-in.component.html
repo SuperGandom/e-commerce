@@ -1,0 +1,86 @@
+<!--
+ =========================================================
+ Material Kit PRO - v2.2.0
+ =========================================================
+
+ Product Page: https://www.creative-tim.com/product/material-kit-pro
+ Copyright 2019 Creative Tim (https://www.creative-tim.com)
+
+ Coded by Creative Tim
+
+ =========================================================
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+
+
+<div class="login-page sidebar-collapse">
+
+  <div class="page-header header-filter"
+    style="background-image: url('../assets/img/bg7.jpg'); background-size: cover; background-position: top center;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+
+
+          <form class="form" [formGroup]="authForm" (ngSubmit)="signIn()">
+            <div class="card card-login card-hidden">
+              <div class="card-header card-header-primary text-center">
+                <h4 class="card-title">Login</h4>
+              </div>
+              <div class="card-body ">
+                <span class="bmd-form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="material-icons">email</i>
+                      </span>
+                    </div>
+
+                    <input type="email" class="form-control" placeholder="Email" formControlName="email"
+                      [ngClass]="{ 'is-invalid': isSubmitted && formControls.email.errors }">
+
+                    <div *ngIf="isSubmitted && formControls.email.errors" class="invalid-feedback text-center">
+                      <div *ngIf="formControls.email.errors.required">Email is required</div>
+                      <div *ngIf="formControls.email.errors.email">Please type valid email</div>
+                    </div>
+                  </div>
+                </span>
+                <span class="bmd-form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="material-icons">lock_outline</i>
+                      </span>
+                    </div>
+
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password"
+                      [ngClass]="{ 'is-invalid': isSubmitted && formControls.email.errors }">
+                    <div *ngIf="isSubmitted && formControls.password.errors"
+                      class="invalid-feedback text-center">
+                      <div *ngIf="formControls.password.errors.required">Password is required</div>
+                      <div *ngIf="formControls.password.errors.maxlength">Password must be less than 100 letters</div>
+                    </div>
+
+                  </div>
+                </span>
+              </div>
+
+              <div class="full-size color-text-red text-center" *ngIf="isLoginFailed"> Email or password is incorrent!</div>
+              <div class="card-footer justify-content-center">
+                <a routerLink="/auth/sign-up" class="blank-layout-card-link justify-content-center">Don't have
+                  account?</a>
+              </div>
+
+              <div class="card-footer justify-content-center">
+                <button class="btn btn-rose btn-link btn-lg" type="submit" style="float:left;">Log in</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

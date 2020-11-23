@@ -1,0 +1,104 @@
+<div class="page-header header-filter"
+  style="background-image: url('../assets/img/bg7.jpg'); background-size: cover; background-position: top center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+        <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="card card-login card-hidden">
+            <div class="card-header card-header-primary text-center">
+              <h4 class="card-title">Register</h4>
+            </div>
+            <div class="card-body ">
+             
+              <span class="bmd-form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">supervised_user_circle</i>
+                    </span>
+                  </div>
+
+                  <input type="text" formControlName="username" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }" 
+                    placeholder="username" />
+                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback text-center">
+                    <div *ngIf="f.username.errors.required"> Username is required</div>
+                    <div *ngIf="f.username.errors.maxlength">Username must be less than 100 characters</div>
+                  </div>
+
+                </div>
+              </span>
+
+              <span class="bmd-form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">email</i>
+                    </span>
+                  </div>
+
+                  <input type="email" formControlName="email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" 
+                    placeholder="email" />
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-center">
+                    <div *ngIf="f.email.errors.required">Email address is required</div>
+                    <div *ngIf="f.email.errors.email">Email address is invalid</div>
+                    <div *ngIf="f.email.errors.maxlength">Email address must be less than 100 characters</div>
+                  </div>
+
+                </div>
+              </span>
+              <span class="bmd-form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+                  <input type="password" formControlName="password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" 
+                    placeholder="password" />
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-center">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                  </div>
+                </div>
+              </span>
+              <span class="bmd-form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+                  <input type="password" formControlName="confirmPassword" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
+                    placeholder="Confirm Password" />
+                  <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback text-center">
+                    <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                    <div *ngIf="f.confirmPassword.errors.mustMatch">Confirm Password must match</div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div class="card-footer justify-content-center">
+              <a routerLink="/auth/sign-in" class="blank-layout-card-link justify-content-center">back to login</a>
+            </div>
+            <ng-container *ngIf="duplicatedEmailKey">
+              <p class="mt-3 text-danger text-center">
+                Duplicated Email.
+              </p>
+            </ng-container>
+            <ng-container *ngIf="duplicatedUsernameKey">
+              <p class="mt-3 text-danger text-center">
+                Duplicated Username.
+              </p>
+            </ng-container>
+            <div class="card-footer justify-content-center">
+              <button class="btn btn-rose btn-link btn-lg" type="submit" style="float:left;">Register</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+  </div>
