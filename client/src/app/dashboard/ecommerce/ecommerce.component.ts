@@ -89,11 +89,13 @@ export class EcommerceComponent implements OnInit {
 
   initData() {
     this.latestIteralData = this.totalData.slice(0, this.latestLoadNumber);
-    this.latestDisplay = true;
-    console.log('this.latestDisplay')
-    console.log(this.latestDisplay)
+
     this.iteralData = this.totalData.slice(0, this.loadNumber);
-    this.display = true;
+    setTimeout(() => {
+      this.latestDisplay = true;
+      this.display = true;
+      });
+   
 
   //    this.renderer.listen(this.clickButton.nativeElement, 'click', () => {
   //     this.start();

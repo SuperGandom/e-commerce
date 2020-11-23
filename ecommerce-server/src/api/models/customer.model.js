@@ -20,22 +20,30 @@ const roles = ['User','Analysis','SuperAdmin'];
  * @private
  */
 const customerSchema = new mongoose.Schema({
-    username:{
-        type:String,
-    },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    lowercase: true,
-  },
+  username: { type: String, required: 'fullname can\'t be empty', unique: true },
+  avatar: { type: String},
   password: {
-    type: String,
-    maxlength: 128,
+      type: String,
+      required: 'Password can\'t be empty',
+      minlength: [8, 'Password must be atleast 8 character long']
   },
-}, {
-  timestamps: true,
+  fullname: {
+      type: String,
+      required: 'fullname can\'t be empty'
+  },
+  email: {
+      type: String,
+      required: 'email can\'t be empty'
+  },
+  phone: {
+      type: String,
+      required: 'email can\'t be empty'
+  },
+  status:{
+      type: String,
+      enum:["active","pending","suspend"],
+      default:"active"
+  },
 });
 
 /**

@@ -36,7 +36,13 @@ exports.register = async (req, res) => {
     }else if(existUsername){
       res.json('duplicate username');
     }else{
-      const customer = await new Customer({username:req.body.username,email:req.body.email, password:req.body.password}).save();
+      const customer = await new Customer({
+        username:req.body.username,
+        email:req.body.email,
+        fullname:req.body.fullname,
+        phone:req.body.phone,
+        password:req.body.password
+      }).save();
       const customerTransformed = customer.transform();
       const token = generateTokenResponse(customer, customer.token());
       return res.json({ token, user: customerTransformed, status: httpStatus.CREATED });

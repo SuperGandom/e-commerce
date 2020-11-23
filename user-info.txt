@@ -1,0 +1,8 @@
+digitalocen: GandomSuperMarket@gmail.com
+
+pass:Heshmat123
+
+
+github:SuperGandom
+
+pass:Gandom123

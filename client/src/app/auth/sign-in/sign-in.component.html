@@ -55,11 +55,11 @@
                     </div>
 
                     <input type="password" class="form-control" placeholder="Password" formControlName="password"
-                      [ngClass]="{ 'is-invalid': isSubmitted && formControls.email.errors }">
+                      [ngClass]="{ 'is-invalid': isSubmitted && formControls.password.errors }">
                     <div *ngIf="isSubmitted && formControls.password.errors"
                       class="invalid-feedback text-center">
                       <div *ngIf="formControls.password.errors.required">Password is required</div>
-                      <div *ngIf="formControls.password.errors.maxlength">Password must be less than 100 letters</div>
+                      <div *ngIf="formControls.password.errors.minlength">Password must be larger than 8 letters</div>
                     </div>
 
                   </div>

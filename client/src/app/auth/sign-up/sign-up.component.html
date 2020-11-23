@@ -9,76 +9,118 @@
               <h4 class="card-title">Register</h4>
             </div>
             <div class="card-body ">
-             
-              <span class="bmd-form-group">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">supervised_user_circle</i>
-                    </span>
-                  </div>
+              <div class="row">
+                <div class="col-6">
+                  <span class="bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">supervised_user_circle</i>
+                        </span>
+                      </div>
 
-                  <input type="text" formControlName="username" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }" 
-                    placeholder="username" />
-                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback text-center">
-                    <div *ngIf="f.username.errors.required"> Username is required</div>
-                    <div *ngIf="f.username.errors.maxlength">Username must be less than 100 characters</div>
-                  </div>
+                      <input type="text" formControlName="username" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="username" />
+                      <div *ngIf="submitted && f.username.errors" class="invalid-feedback text-center">
+                        <div *ngIf="f.username.errors.required"> Username is required</div>
+                      </div>
 
+                    </div>
+                  </span>
                 </div>
-              </span>
+                <div class="col-6">
+                  <span class="bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">email</i>
+                        </span>
+                      </div>
 
-              <span class="bmd-form-group">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">email</i>
-                    </span>
-                  </div>
+                      <input type="email" formControlName="email" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="email" />
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-center">
+                        <div *ngIf="f.email.errors.required">Email address is required</div>
+                        <div *ngIf="f.email.errors.email">Email address is invalid</div>
+                      </div>
 
-                  <input type="email" formControlName="email" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" 
-                    placeholder="email" />
-                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-center">
-                    <div *ngIf="f.email.errors.required">Email address is required</div>
-                    <div *ngIf="f.email.errors.email">Email address is invalid</div>
-                    <div *ngIf="f.email.errors.maxlength">Email address must be less than 100 characters</div>
-                  </div>
+                    </div>
+                  </span>
+                </div>
+                <div class="col-6">
+                  <span class="bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">face</i>
+                        </span>
+                      </div>
 
+                      <input type="text" formControlName="fullname" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }" placeholder="fullname" />
+                      <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback text-center">
+                        <div *ngIf="f.fullname.errors.required">Fullname is required</div>
+                      </div>
+
+                    </div>
+                  </span>
                 </div>
-              </span>
-              <span class="bmd-form-group">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">lock_outline</i>
-                    </span>
-                  </div>
-                  <input type="password" formControlName="password" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" 
-                    placeholder="password" />
-                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-center">
-                    <div *ngIf="f.password.errors.required">Password is required</div>
-                  </div>
+                <div class="col-6">
+                  <span class="bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">settings_phone</i>
+                        </span>
+                      </div>
+
+                      <input type="text" formControlName="phone" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" placeholder="phone" />
+                      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback text-center">
+                        <div *ngIf="f.phone.errors.required">Phone is required</div>
+                      </div>
+
+                    </div>
+                  </span>
                 </div>
-              </span>
-              <span class="bmd-form-group">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">lock_outline</i>
-                    </span>
-                  </div>
-                  <input type="password" formControlName="confirmPassword" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
-                    placeholder="Confirm Password" />
-                  <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback text-center">
-                    <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-                    <div *ngIf="f.confirmPassword.errors.mustMatch">Confirm Password must match</div>
-                  </div>
+                <div class="col-6">
+                  <span class="bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">lock_outline</i>
+                        </span>
+                      </div>
+                      <input type="password" formControlName="password" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="password" />
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-center">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be larger than 8 characters</div>
+
+                      </div>
+                    </div>
+                  </span>
                 </div>
-              </span>
+                <div class="col-6">
+                  <span class="bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">lock_outline</i>
+                        </span>
+                      </div>
+                      <input type="password" formControlName="confirmPassword" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
+                        placeholder="Confirm Password" />
+                      <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback text-center">
+                        <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                        <div *ngIf="f.confirmPassword.errors.mustMatch">Confirm Password must match</div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+
             </div>
             <div class="card-footer justify-content-center">
               <a routerLink="/auth/sign-in" class="blank-layout-card-link justify-content-center">back to login</a>
@@ -100,5 +142,5 @@
         </form>
       </div>
     </div>
-</div>
   </div>
+</div>

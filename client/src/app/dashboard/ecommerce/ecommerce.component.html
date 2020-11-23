@@ -15,7 +15,7 @@
     <div class="section">
         <div class="container">
             <h2 class="section-title">Latest Offers</h2>
-            <div [hidden]="!latestDisplay" class="row">
+            <div *ngIf="latestDisplay" class="row">
                 <div *ngFor="let item of latestIteralData" class="col-md-4">
                     <div class="card card-product card-plain">
                         <div *ngIf="item.media" class="card-header card-header-image">

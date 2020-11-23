@@ -36,7 +36,9 @@ exports.connect = () => {
       const customer = new Customer({
         username:"qwe",
         email: "qwe@qwe.com",
-        password: "qwe",
+        password: "qweqweqwe",
+        fullname:"qwe",
+        phone:"+234234234",
       });
       const customerData = await Customer.findOne({email: "qwe@qwe.com"});
       if(!customerData) customer.save();
